@@ -1,0 +1,18 @@
+Package: compass
+Type: Package
+Title: A Compass package for orientation
+Version: 0.1.0
+Authors@R: person("Mauro", "Camara Escudero", email = "maurocamaraescudero@gmail.com",
+  role = c("aut", "cre"))
+Author: Mauro Camara Escudero [aut, cre]
+Maintainer: Mauro Camara Escudero <maurocamaraescudero@gmail.com>
+Description: Not sure what this package does just yet, but hopefully
+	will be something exciting!
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat (>= 2.1.0)
+Imports: 
+    utils
