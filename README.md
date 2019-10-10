@@ -3,9 +3,10 @@
 
 # compass
 
-<!-- badges: start -->
-
-<!-- badges: end -->
+[![Build
+Status](https://travis-ci.com/MauroCE/compass.svg?branch=master)](https://travis-ci.com/MauroCE/compass)
+[![codecov](https://codecov.io/gh/MauroCE/compass/branch/master/graph/badge.svg)](https://codecov.io/gh/MauroCE/compass)
+<!-- badges: start --> <!-- badges: end -->
 
 The goal of compass is to exemplify a toy R package for the personal
 portfolio of the Statistical Computing 1 course attended by first year
