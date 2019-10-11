@@ -4,9 +4,19 @@ cache: packages
 branches:
   only:
     - master
-
+r_packages:
+    - rmarkdown
+script:
+  - Rscript -e 'rmarkdown::render("README.Rmd", output_dir="public")'
 r_github_packages:
   - r-lib/covr
-
 after_success:
   - Rscript -e 'covr::codecov()'
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_PAT
+    on:
+        branch: master
+    local_dir: public
+    target_branch: gh-pages
