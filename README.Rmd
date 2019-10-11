@@ -25,7 +25,7 @@ The goal of compass is to exemplify a toy R package for the personal portfolio o
 
 You can install the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("MauroCE/compass")
 ```
@@ -33,7 +33,7 @@ devtools::install_github("MauroCE/compass")
 
 This is a basic example which shows how to use the compass package.
 
-```{r example}
+```{r example, eval=FALSE}
 # Attach the package
 library(compass)
 # Find the sum of the squares of two numbers
@@ -43,12 +43,12 @@ df <- data.frame(matrix(1:30, 10, 3))
 tilted_head <- tilt_head(df, 3)
 ```
 we can check the output 
-```{r example_output}
-z
+```{r, echo=FALSE}
+2^2 + 4^2
 ```
 and 
-```{r example_output2}
-tilted_head
+```{r, echo=FALSE}
+t(head(data.frame(matrix(1:30, 10, 3)), 3))
 ```
 
 ## License

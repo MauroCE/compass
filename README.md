@@ -41,20 +41,14 @@ tilted_head <- tilt_head(df, 3)
 
 we can check the output
 
-``` r
-z
-#> [1] 20
-```
+    #> [1] 20
 
 and
 
-``` r
-tilted_head
-#>     1  2  3
-#> X1  1  2  3
-#> X2 11 12 13
-#> X3 21 22 23
-```
+    #>     1  2  3
+    #> X1  1  2  3
+    #> X2 11 12 13
+    #> X3 21 22 23
 
 ## License
 

@@ -18,7 +18,7 @@ The `compass` R package is a toy package made by [Mauro Camara Escudero](https:/
 ### Installation
 
 You can install the development version from [GitHub](https://github.com/) with:
-``` r
+```{r, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("MauroCE/compass")
 ```
@@ -26,18 +26,25 @@ devtools::install_github("MauroCE/compass")
 ### Examples
 The `compass` package is extremely powerful and flexible, so the following examples are here only to give a taster of its full capabilities. With the `compass` package we can sum the squares of two numbers
 
-```{r importing library}
+```{r, eval=FALSE}
 # Attach the package
 library(compass)
 # Find the sum of the squares of two numbers
 z <- sumsquares(2, 4)
-z
+```
+which gives
+```{r, echo=FALSE}
+2^2 + 4^2
 ```
 and transpose the head of a dataframe
-```{r tilt}
+```{r, eval=FALSE}
 # and tilt the head of a dataframe
 df <- data.frame(matrix(1:30, 10, 3))
 tilted_head <- tilt_head(df, 3)
+```
+to obtain
+```{r, echo=FALSE}
+t(head(data.frame(matrix(1:30, 10, 3)), 3))
 ```
 and that's it.
 
