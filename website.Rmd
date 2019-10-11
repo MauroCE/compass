@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 The `compass` R package is a toy package made by [Mauro Camara Escudero](https://github.com/MauroCE) for the personal portfolio of the [Statistical Computing 1](https://awllee.github.io/sc1-2019/) course delivered by [Anthony Lee](http://www.bristol.ac.uk/maths/people/anthony-w-lee/index.html) to first year PhD students in [Computational Statistics and Data Science](COMPASS) at the [University of Bristol](www.bris.ac.uk). What you are seeing now is an RMarkdown file that is part of the package repository and is deployed by [Travis CI](https://travis-ci.com) on [GitHub Pages](https://pages.github.com/).
 
 The repository is hosted [here](https://github.com/MauroCE/compass).
+
 ### Installation
 
 You can install the development version from [GitHub](https://github.com/) with:
