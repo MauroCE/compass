@@ -3,10 +3,12 @@
 
 # compass
 
+<!-- badges: start -->
+
 [![Build
 Status](https://travis-ci.com/MauroCE/compass.svg?branch=master)](https://travis-ci.com/MauroCE/compass)
 [![codecov](https://codecov.io/gh/MauroCE/compass/branch/master/graph/badge.svg)](https://codecov.io/gh/MauroCE/compass)
-<!-- badges: start --> <!-- badges: end -->
+<!-- badges: end -->
 
 The goal of compass is to exemplify a toy R package for the personal
 portfolio of the Statistical Computing 1 course attended by first year
@@ -15,14 +17,8 @@ the University of Bristol.
 
 ## Installation
 
-You can install the released version of compass from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("compass")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -31,11 +27,33 @@ devtools::install_github("MauroCE/compass")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows how to use the compass package.
 
 ``` r
+# Attach the package
 library(compass)
-## basic example code
+# Find the sum of the squares of two numbers
+z <- sumsquares(2, 4)
+# and tilt the head of a dataframe
+df <- data.frame(matrix(1:30, 10, 3))
+tilted_head <- tilt_head(df, 3)
+```
+
+we can check the output
+
+``` r
+z
+#> [1] 20
+```
+
+and
+
+``` r
+tilted_head
+#>     1  2  3
+#> X1  1  2  3
+#> X2 11 12 13
+#> X3 21 22 23
 ```
 
 ## License
