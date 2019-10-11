@@ -7,7 +7,7 @@ branches:
 r_packages:
     - rmarkdown
 script:
-  - Rscript -e 'rmarkdown::render("example.Rmd", output_dir="public")'
+  - Rscript -e 'rmarkdown::render("compass.Rmd", output_dir="public")'
 r_github_packages:
   - r-lib/covr
 after_success:
