@@ -1,181 +1,54 @@
 ---
-title: "Statistical Methods 1"
-output: html_document
+title: "The Compass R Package"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
 ---
-
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{listings}
-\usepackage{color}
-\usepackage[T1]{fontenc}
-\usepackage{fullpage}
-\usepackage{hyperref}
-\usepackage{amssymb}
-\usepackage{fullpage}
-\usepackage{color}
-\usepackage{bm}
-\usepackage{algorithm2e}
-
-\newcommand{\def}{\overset{\text{def}}{:=}}
-\newcommand{\lop}{\mathcal{L}}
-\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
-\newcommand{\norm}[1]{||#1||}
-\newcommand{\vx}{\vect{x}}
-\newcommand{\vb}{\vect{b}}
-\newcommand{\vy}{\vect{y}}
-\newcommand{\vz}{\vect{z}}
-\newcommand{\ve}{\vect{e}}
-\newcommand{\yhat}{\widehat{y}}
-\newcommand{\xhat}{\widehat{x}}
-\newcommand{\vc}{\vect{c}}
-\newcommand{\vr}{\vect{r}}
-\newcommand{\vphi}{\vect{\phi}}
-\newcommand{\vf}{\vect{f}}
-\newcommand{\vY}{\vect{Y}}
-\newcommand{\vX}{\vect{X}}
-\newcommand{\vw}{\vect{w}}
-\newcommand{\thetahatis}{\widehat{\theta}^{(s)}_i}
-\newcommand{\thetahat}[1]{\widehat{\theta}^{(#1)}_i}
-\newcommand{\vm}{\vect{m}}
-\newcommand{\redmath}[1]{\mathbin{\textcolor{red}{\vect{#1}}}}
-\newcommand{\redtext}[1]{\textcolor{red}{\vect{#1}}}
-\newcommand{\vzero}{\vect{0}}
-\newcommand{\vt}{\vect{t}}
-\newcommand{\linearpredictor}{\vx_i^T\vbeta}
-\newcommand{\vmu}{\vect{\mu}}
-\newcommand{\vnu}{\vect{\nu}}
-\newcommand{\veta}{\vect{\eta}}
-\newcommand{\vbeta}{\vect{\beta}}
-\newcommand{\vepsilon}{\vect{\epsilon}}
-\newcommand{\Pbb}{\mathbb{P}}
-\newcommand{\Ebb}{\mathbb{E}}
-\newcommand{\vdelta}{\vect{\delta}}
-\newcommand{\Rbb}{\mathbb{R}}
-\newcommand{\vxi}{\vect{\xi}}
-\newcommand{\vu}{\vect{u}}
-\newcommand{\vW}{\vect{W}}
-\newcommand{\vlambda}{\vect{\lambda}}
-\newcommand{\dataset}{\mathcal{D}}
-\newcommand{\vS}{\vect{S}}
-\newcommand{\sample}{\vz^{(l)}}
-\newcommand{\MYhref}[3][blue]{\href{#2}{\color{#1}{#3}}}
-\newcommand{\sol}[1]{\vx^{(#1)}}
-\newcommand{\qtext}[1]{\quad\quad \text{#1}}
-\newcommand{\vtheta}{\vect{\theta}}
-\newcommand{\bi}[1]{\textbf{\textit{#1}}}
-\newcommand{\iid}{\overset{\text{i.i.d.}}{\sim}}
-\newcommand{\uniform}{\mathcal{U}(0, 1)}
-\newcommand{\qimplies}{\quad\Longrightarrow\quad}
-\newcommand{\tp}{\tilde{p}}
-\newcommand{\nul}{\Theta^{(0)}}
-\newcommand{\alter}{\Theta^{(1)}}
-\newcommand{\const}{\mathcal{Z}}
-\newcommand{\tq}{\tilde{q}}
-\newcommand{\vxhat}{\widehat{\vx}}
-\newcommand{\tvx}{\widetilde{\vx}}
-\newcommand{\tr}{\tilde{r}}
-\newcommand{\like}{\mathcal{L}}
-\newcommand{\kl}[2]{\text{KL}(#1\,\,||\,\,#2)}
-\newcommand{\logit}[1]{\log\left(\frac{#1}{1-#1}\right)}
-\newcommand{\elbo}[1]{\text{elbo}(#1)}
-\newcommand{\eval}{\biggr\rvert}
-\newcommand{\normal}{\mathcal{N}}
-\newcommand{\class}{\mathcal{C}}
-\newcommand{\infor}{\mathcal{I}}
-\newcommand{\variance}{\text{Var}}
-\newcommand{\vSigma}{\vect{\Sigma}}
-\newcommand{\lp}[3]{
-    \begin{equation*}
-    \begin{alignat}{2}
-    &\!\min       &\qquad& #1\\
-    &\text{s.t.} &      & #2\\
-    &                  &      & #3
-    \end{alignat}
-    \end{equation*}
-}
-\newcommand{\lpmax}[3]{
-    \begin{equation*}
-    \begin{alignat}{2}
-    &\!\max       &\qquad& #1\\
-    &\text{s.t.} &      & #2\\
-    &                  &      & #3
-    \end{alignat}
-    \end{equation*}
-}
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## What is the `compass` R package?
 
-## Course Description
-Repository containing summary of notes for the [Statistical Methods 1](https://www.bris.ac.uk/unit-programme-catalogue/UnitDetails.jsa;jsessionid=7912981ABC434B62AA99EB75652E7E8A?ayrCode=19%2F20&unitCode=MATHM0041) course in the [Computational Statistics and Data Science (COMPASS)](http://www.bris.ac.uk/maths/postgraduate/compass/) Center for Doctoral Training (CDT) PhD at the [University of Bristol](https://www.bristol.ac.uk).
+The `compass` R package is a toy package made by [Mauro Camara Escudero](https://github.com/MauroCE) for the personal portfolio of the [Statistical Computing 1](https://awllee.github.io/sc1-2019/) course delivered by [Anthony Lee](http://www.bristol.ac.uk/maths/people/anthony-w-lee/index.html) to first year PhD students in [Computational Statistics and Data Science](COMPASS) at the [University of Bristol](www.bris.ac.uk). What you are seeing now is an RMarkdown file that is part of the package repository and is deployed by [Travis CI](https://travis-ci.com) on [GitHub Pages](https://pages.github.com/).
 
-## Table of Contents
+The repository is hosted [here](https://github.com/MauroCE/compass).
 
-1. [Regression Problems](#regprob) <br>
-    1.1 [Problem Statement and Assumptions](#probstat) <br>
-    1.2 [Measuring Performance and Model Selection](#perf) <br>
-    1.3 [Non-Bayesian Inference Methods](#nonbayes) <br>
-2. [Classification](#class)
-    
+### Installation
 
-<a name="regprob"></a>
+You can install the development version from [GitHub](https://github.com/) with:
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("MauroCE/compass")
+```
 
-## Regression Problems
+### Examples
+The `compass` package is extremely powerful and flexible, so the following examples are here only to give a taster of its full capabilities. With the `compass` package we can sum the squares of two numbers
 
-<a name="probstat"></a>
-
-### Problem Statement and Assumptions
-Given a **training**  dataset 
-$$D_0:= \left\{(\vx_i, y_i)\right\}_{i=1}^n$$
-of $n$ pairs of inputs $\vx_i\in\Rbb^{d\times 1}$ and outputs $y_i\in \Rbb$ we want to **predict** the output $\yhat$ for a new input $\vxhat$ by _inferring_ the **parameters** $\vw\in \Rbb^{(d+1)\times 1}$ of a  **prediction function** $f(\vx, \vw)$.
-
-<a name="perf"></a>
-
-### Measuring Performance and Model Selection
-We want $f(\vx, \vw)$ to perform well on **unseen testing data** $D_1$. In other words, we want our model to **generalize** well. We define the **error** on a dataset $D'$ given the inferred parameters $\vw^*$ as 
-
-$$E(D', \vw^*):=\sum_{i\in D'} \left(y_i - f(\vx_i, \vw^*)\right)^2$$
-
-This gives two **performance metrics**:
-
-* _Training Error_ : $E(D_0, \vw^*)$
-* _Testing Error_ : $E(D_1, \vw^*)$
-
-We could split our dataset into training set $D_0$ and testing set $D_1$, however data is often scarce so we want to use as much of it as possible. To fully exploit our dataset we can use **Cross Validation**:
-
-* Split the dataset into $s$ groups $D_1, \ldots, D_s$ called **folds**. We then call it **s-fold cross validation**. In the extreme case in which $s=n$, i.e. each group consists of one data point, we call it **leave-one-out** cross validation.
-* Use $s-1$ groups to infer $\vw^*$. Test performance of $f(\vx, \vw^*)$ on the remaining unseen group, and calculate $E(D_i, \vw^{*^{(i)}})$. Repeat this until all groups have been used for testing exactly once.
-* At the end, calculate the mean test error $\frac{1}{2}$  $$E_{\text{cv}} = \frac{1}{s+1}\sum_{i=1}^s E(D_i, \vw^{*^{(i)}})$$
-
-Cross validation can be used to choose between **competing models**. Thus, it is often used for **model selection** when a model has one or more **hyperparameters** that needs to be estimated. The main problems with Cross Validation are:
-
-* Dataset needs to be IID, but this is often not the case. For instance in a time-dependent dataset.
-* Computational complexity of Cross Validation algorithm increases by a factor of $s$ for each hyperparameter.
-
-<a name="nonbayes"></a>
-
-### Non-Bayesian Inference Methods
-We adopt the following notation: each column of the matrix $X$ represents a single observation of all the explanatory variable features, and each row represents all observations of a single feature. 
-
-$$X = 
-\begin{pmatrix}
-  \vx_1 & \vx_2 & \cdots & \vx_n \\
-  1 & 1 & \cdots 1
-\end{pmatrix}
-\in \Rbb^{(b+1)\times n}
-$$
+```{r, eval=FALSE}
+# Attach the package
+library(compass)
+# Find the sum of the squares of two numbers
+z <- sumsquares(2, 4)
+```
+```{r, echo=FALSE}
+2^2 + 4^2
+```
+and transpose the head of a dataframe
+```{r, eval=FALSE}
+# and tilt the head of a dataframe
+df <- data.frame(matrix(1:30, 10, 3))
+tilted_head <- tilt_head(df, 3)
+```
+```{r, echo=FALSE}
+t(head(data.frame(matrix(1:30, 10, 3)), 3))
+```
+and that's it.
 
 
-
-
-
-
-<a name="class"></a>
-
-## Classification
+## License
+This project is licensed under the terms of the MIT license. 
+The full license can be found [here](LICENSE.md).
